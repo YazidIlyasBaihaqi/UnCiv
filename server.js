@@ -2,6 +2,7 @@ import express from 'express'
 import fs from 'fs'
 import fetch from 'node-fetch'
 
+import { publicIp, publicIpv4, publicIpv6 } from 'public-ip';
 const app = express();
 const port = 80;
 const filedir = process.cwd();
@@ -24,6 +25,7 @@ const WRITE_OPTIONS = {
 (function configurePaths() {
 
 	app.get(`/isalive`, (req, res) => {
+		console.log('true')
 		res.status(200).send(`true`)
 	});
 
@@ -66,6 +68,14 @@ const WRITE_OPTIONS = {
 		}
 	})
 })();
+
+async function yes() {
+	console.log(await publicIp());
+	console.log(await publicIpv6());
+	console.log(await publicIpv4());
+};
+
+yes();
 
 app.listen(port, () => {
 	console.log(`Server listening on ${port}`);
