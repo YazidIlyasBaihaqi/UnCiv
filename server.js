@@ -4,7 +4,7 @@ import fetch from 'node-fetch'
 
 import { publicIp, publicIpv4, publicIpv6 } from 'public-ip';
 const app = express();
-const port = 80;
+const port = process.env.PORT || 3000;
 const filedir = process.cwd();
 const WRITE_OPTIONS = {
 	encoding: 'utf8',
