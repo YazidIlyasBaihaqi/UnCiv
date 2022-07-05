@@ -71,8 +71,6 @@ const WRITE_OPTIONS = {
 
 async function yes() {
 	console.log(await publicIp());
-	console.log(await publicIpv6());
-	console.log(await publicIpv4());
 };
 
 yes();
