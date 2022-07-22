@@ -1,6 +1,8 @@
 import express from 'express'
 import fs from 'fs'
 import fetch from 'node-fetch'
+import dotenv from "dotenv";
+dotenv.config()
 
 import { publicIp, publicIpv4, publicIpv6 } from 'public-ip';
 const app = express();
